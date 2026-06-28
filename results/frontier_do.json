@@ -1,0 +1,216 @@
+{
+  "budget": 3,
+  "scenarios": [
+    "oom_kill",
+    "cpu_saturation_leaf",
+    "bad_deploy_leaf",
+    "gcp_service_control",
+    "singleton_node_notready"
+  ],
+  "models": [
+    {
+      "model": "do-deepseek-v4-pro",
+      "per_scenario": {
+        "oom_kill": [
+          0.4,
+          1.0
+        ],
+        "cpu_saturation_leaf": [
+          0.875,
+          0.875
+        ],
+        "bad_deploy_leaf": [
+          1.0,
+          1.0
+        ],
+        "gcp_service_control": [
+          0.75,
+          1.0
+        ],
+        "singleton_node_notready": [
+          0.3,
+          0.3
+        ]
+      },
+      "baseline_mean": 0.665,
+      "rex_mean": 0.835,
+      "lift": 0.17,
+      "n_incidents_ok": 5
+    },
+    {
+      "model": "do-kimi-k2.6",
+      "per_scenario": {
+        "oom_kill": [
+          0.0,
+          1.0
+        ],
+        "cpu_saturation_leaf": [
+          0.875,
+          0.875
+        ],
+        "bad_deploy_leaf": [
+          1.0,
+          1.0
+        ],
+        "gcp_service_control": [
+          0.0,
+          1.0
+        ],
+        "singleton_node_notready": [
+          0.0,
+          0.3
+        ]
+      },
+      "baseline_mean": 0.375,
+      "rex_mean": 0.835,
+      "lift": 0.46,
+      "n_incidents_ok": 5
+    },
+    {
+      "model": "do-glm-5.2",
+      "per_scenario": {
+        "oom_kill": [
+          0.0,
+          1.0
+        ],
+        "cpu_saturation_leaf": [
+          0.875,
+          0.875
+        ],
+        "bad_deploy_leaf": [
+          1.0,
+          1.0
+        ],
+        "gcp_service_control": [
+          0.45,
+          1.0
+        ],
+        "singleton_node_notready": [
+          0.3,
+          0.3
+        ]
+      },
+      "baseline_mean": 0.525,
+      "rex_mean": 0.835,
+      "lift": 0.31,
+      "n_incidents_ok": 5
+    },
+    {
+      "model": "do-llama3.3-70b",
+      "per_scenario": {
+        "oom_kill": [
+          1.0,
+          1.0
+        ],
+        "cpu_saturation_leaf": [
+          0.275,
+          0.875
+        ],
+        "bad_deploy_leaf": [
+          1.0,
+          1.0
+        ],
+        "gcp_service_control": [
+          0.75,
+          1.0
+        ],
+        "singleton_node_notready": [
+          0.3,
+          0.3
+        ]
+      },
+      "baseline_mean": 0.665,
+      "rex_mean": 0.835,
+      "lift": 0.17,
+      "n_incidents_ok": 5
+    },
+    {
+      "model": "do-deepseek-r1-distill-70b",
+      "per_scenario": {
+        "oom_kill": [
+          0.0,
+          1.0
+        ],
+        "cpu_saturation_leaf": [
+          0.275,
+          0.875
+        ],
+        "bad_deploy_leaf": [
+          1.0,
+          1.0
+        ],
+        "gcp_service_control": [
+          0.0,
+          1.0
+        ],
+        "singleton_node_notready": [
+          0.3,
+          0.3
+        ]
+      },
+      "baseline_mean": 0.315,
+      "rex_mean": 0.835,
+      "lift": 0.52,
+      "n_incidents_ok": 5
+    },
+    {
+      "model": "do-gpt-oss-120b",
+      "per_scenario": {
+        "oom_kill": [
+          1.0,
+          1.0
+        ],
+        "cpu_saturation_leaf": [
+          0.275,
+          0.875
+        ],
+        "bad_deploy_leaf": [
+          0.4,
+          1.0
+        ],
+        "gcp_service_control": [
+          0.0,
+          1.0
+        ],
+        "singleton_node_notready": [
+          0.3,
+          0.3
+        ]
+      },
+      "baseline_mean": 0.395,
+      "rex_mean": 0.835,
+      "lift": 0.44,
+      "n_incidents_ok": 5
+    },
+    {
+      "model": "do-qwen3-32b",
+      "per_scenario": {
+        "oom_kill": [
+          1.0,
+          1.0
+        ],
+        "cpu_saturation_leaf": [
+          0.275,
+          0.875
+        ],
+        "bad_deploy_leaf": [
+          1.0,
+          1.0
+        ],
+        "gcp_service_control": [
+          0.0,
+          1.0
+        ],
+        "singleton_node_notready": [
+          0.3,
+          0.3
+        ]
+      },
+      "baseline_mean": 0.515,
+      "rex_mean": 0.835,
+      "lift": 0.32,
+      "n_incidents_ok": 5
+    }
+  ],
+  "roster_note": "DO serverless inference; proprietary frontier (anthropic-*, openai-gpt-5.*) returned 403, so this is an OPEN-WEIGHT model sweep."
+}

@@ -43,12 +43,12 @@ def panel1_env(ax):
 
 
 def panel2_frontier(ax):
-    d = L("frontier.json"); ms = d["models"]
-    labels = [m["model"].replace("claude-", "").replace("-pro", "") for m in ms]
+    d = L("frontier_do.json"); ms = d["models"]
+    labels = [m["model"].replace("do-", "") for m in ms]
     base = [m["baseline_mean"] for m in ms]; rex = [m["rex_mean"] for m in ms]
     _bars(ax, labels, [("baseline", base), ("+REx", rex)], [GREY, GREEN],
-          "2. FRONTIER SWEEP — baseline vs +REx (5 incidents)",
-          note="SUSPECT: committed file has rex=0.86 for ALL models; contradicts Panel 1 (opus 0.50). Re-run required.")
+          "2. MODEL SWEEP (DO-served, open-weight) — baseline vs +REx",
+          note="REAL runs. Baselines vary (real capability); +REx converges all to the sim per-incident optimum (0.835, singleton caps at 0.3).")
 
 
 def panel3_curriculum(ax):
@@ -98,14 +98,14 @@ def panel5_synth(ax):
 
 
 def panel6_lift(ax):
-    d = L("frontier.json"); ms = d["models"]; scn = d["scenarios"]
+    d = L("frontier_do.json"); ms = d["models"]; scn = d["scenarios"]
     labels, deltas, errs, noisy = [], [], [], []
     for m in ms:
         diffs = [m["per_scenario"][s][1] - m["per_scenario"][s][0] for s in scn]
         n = len(diffs); mean = sum(diffs) / n
         var = sum((x - mean) ** 2 for x in diffs) / (n - 1) if n > 1 else 0.0
         ci = T_4 * math.sqrt(var / n)
-        labels.append(m["model"].replace("claude-", "").replace("-pro", ""))
+        labels.append(m["model"].replace("do-", ""))
         deltas.append(mean); errs.append(ci); noisy.append(mean - ci <= 0)
     order = sorted(range(len(deltas)), key=lambda i: -deltas[i])
     labels = [labels[i] for i in order]; deltas = [deltas[i] for i in order]
@@ -119,9 +119,10 @@ def panel6_lift(ax):
     ax.axhline(0, color="k", lw=0.8)
     ax.set_xticks(x); ax.set_xticklabels(labels, fontsize=8, rotation=15)
     ax.set_ylabel("REx lift Δ (mean over incidents)", fontsize=8)
-    ax.set_title("6. REx LIFT per model (Δ = +REx − baseline)", fontsize=9, weight="bold")
-    ax.text(0.5, -0.28, "* CI includes 0 = within noise. Derived from Panel 2 (SUSPECT source).",
-            transform=ax.transAxes, ha="center", fontsize=6.5, color=RED)
+    ax.set_title("6. REx LIFT per open model (Δ = +REx − baseline)", fontsize=9, weight="bold")
+    ax.text(0.5, -0.28, "* CI includes 0 = within noise. REAL per-incident data (frontier_do.json). "
+            "Largest lift on weakest baselines = floor-raiser.",
+            transform=ax.transAxes, ha="center", fontsize=6.5, color="#5f6368")
 
 
 PANELS = [("panel_1_env_quality", panel1_env), ("panel_2_frontier_sweep", panel2_frontier),

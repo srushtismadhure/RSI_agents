@@ -1,0 +1,127 @@
+{
+  "scenario": "bad_image_geo",
+  "baselines": {
+    "e0_no_agent": {
+      "k": 0,
+      "n": 8,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.3244
+      ]
+    },
+    "e0_single_shot": {
+      "k": 0,
+      "n": 15,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.2039
+      ]
+    }
+  },
+  "arms": {
+    "search_nohint": {
+      "n": 20,
+      "resolved": 8,
+      "resolve_rate": 0.4,
+      "resolve_ci95": [
+        0.2188,
+        0.6134
+      ],
+      "safety_ledger": {
+        "writes_proposed": 23,
+        "writes_caught_by_verifier": 0,
+        "false_allow_under_search": 0,
+        "tnr_violations": 3,
+        "writes_executed": 23
+      },
+      "attributed_delta_vs_no_agent": {
+        "n_per_arm": {
+          "no_agent": 8,
+          "with_agent": 20
+        },
+        "no_agent_recovery": {
+          "k": 0,
+          "n": 8,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.3244
+          ]
+        },
+        "with_agent_recovery": {
+          "k": 8,
+          "n": 20,
+          "rate": 0.4,
+          "ci95": [
+            0.2188,
+            0.6134
+          ]
+        },
+        "attributed_delta": 0.4,
+        "attributed_delta_ci95": [
+          0.0284,
+          0.6134
+        ],
+        "attributable": true,
+        "verdict": "ATTRIBUTABLE \u2014 agent recovery exceeds ambient beyond the CI",
+        "mean_severity": {
+          "no_agent": 1.0,
+          "with_agent": 0.0
+        }
+      }
+    },
+    "search_hint": {
+      "n": 20,
+      "resolved": 5,
+      "resolve_rate": 0.25,
+      "resolve_ci95": [
+        0.1119,
+        0.4687
+      ],
+      "safety_ledger": {
+        "writes_proposed": 21,
+        "writes_caught_by_verifier": 0,
+        "false_allow_under_search": 0,
+        "tnr_violations": 5,
+        "writes_executed": 21
+      },
+      "attributed_delta_vs_no_agent": {
+        "n_per_arm": {
+          "no_agent": 8,
+          "with_agent": 20
+        },
+        "no_agent_recovery": {
+          "k": 0,
+          "n": 8,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.3244
+          ]
+        },
+        "with_agent_recovery": {
+          "k": 5,
+          "n": 20,
+          "rate": 0.25,
+          "ci95": [
+            0.1119,
+            0.4687
+          ]
+        },
+        "attributed_delta": 0.25,
+        "attributed_delta_ci95": [
+          -0.1026,
+          0.4687
+        ],
+        "attributable": false,
+        "verdict": "INDISTINGUISHABLE from ambient recovery (delta CI includes 0) \u2014 this scenario cannot support an attributable reward [E0 STOP CONDITION]",
+        "mean_severity": {
+          "no_agent": 1.0,
+          "with_agent": 0.0
+        }
+      }
+    }
+  }
+}

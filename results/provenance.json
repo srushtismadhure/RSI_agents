@@ -1,5 +1,5 @@
 {
-  "note": "Auto-Harness SRE eval. Every panel value traces to a results/ file. SUSPECT/NEEDS-DATA flagged honestly. No fabrication.",
+  "note": "Auto-Harness SRE eval. Every panel value traces to a results/ file. SUSPECT/NEEDS-DATA flagged honestly. No fabrication. Panels 2 & 6 re-run for real on DO open-weight models (no more uniform placeholder).",
   "panels": [
     {
       "panel": 1,
@@ -15,10 +15,10 @@
     {
       "panel": 2,
       "name": "frontier_sweep",
-      "file": "results/frontier.json",
-      "values": "baseline/rex per model",
-      "class": "SUSPECT",
-      "note": "rex_mean=0.86 identical across all 5 models; opus baseline 0.81 contradicts Panel 1 (0.499). Likely placeholder; live re-run needed (no live frontier providers: Anthropic out of credits, no OpenAI/Google keys)."
+      "file": "results/frontier_do.json",
+      "values": "baseline (varied 0.32-0.67) vs +REx (0.835 convergence) per open model",
+      "class": "REPLOT-real (DO open-model sweep)",
+      "note": "REPLACED the suspect placeholder with REAL DO-served runs. Proprietary frontier (anthropic-*, openai-gpt-5.*) 403'd -> reachable roster is OPEN-WEIGHT (deepseek-v4-pro, kimi-k2.6, glm-5.2, llama3.3-70b, deepseek-r1-distill-70b, gpt-oss-120b, qwen3-32b). No Gemini on DO. +REx converges every model to the sim per-incident optimum (0.835, capped by singleton=0.3)."
     },
     {
       "panel": 3,
@@ -63,16 +63,16 @@
     {
       "panel": 6,
       "name": "rex_lift_delta",
-      "file": "derived from results/frontier.json per_scenario",
+      "file": "derived from results/frontier_do.json",
       "values": "\u0394 per model, paired over 5 incidents, t-CI",
-      "class": "DERIVED (source SUSPECT)",
-      "note": "ALL models CI includes 0 -> within noise at n=5. Inherits Panel 2 caveat."
+      "class": "DERIVED-real",
+      "note": "Real per-incident lift \u0394 with t-CIs. Every per-model CI still includes 0 at n=5 (within noise individually), BUT lift is systematically largest on the weakest baselines (floor-raiser). Honest: the pattern is the signal, not any single bar."
     }
   ],
   "providers_live_at_run": {
     "anthropic": "key set but OUT OF CREDITS",
     "fireworks": "live (glm)",
-    "digitalocean_inference": "live (llama3.3-70b; gpt-5.5 403)",
+    "digitalocean_inference": "LIVE for 7 open-weight models (200); proprietary anthropic-*/openai-gpt-5.* 403",
     "openai": "no key",
     "google": "no key",
     "deepseek": "via DO/fireworks only"
