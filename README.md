@@ -174,5 +174,12 @@ branches. Bounded (≤6 real writes, depth ≤4). Two arms isolate *search* from
    search×leaky-verifier danger is real *in principle* but **did not materialize here**. TNR
    violations (3/5) — executed writes that raised severity — were caught and rolled back.
 
-Data: `results/e1/e1_summary.json` (+ per-episode raw in the research repo). A **partial** crack
-of the hard cascade (~40%), not a solution, with the safety coupling left as the next experiment.
+**Actual search trajectories (raw logs):** the improvement is visible per-episode —
+[`results/e1/TRAJECTORIES.md`](results/e1/TRAJECTORIES.md) walks through a resolved run (diagnose
+`geo` → `rollout undo` → severity drops → recover), a safety-catch run (misdiagnosed
+`rollout undo` raised severity → TNR violation → rolled back), and an honest failure (never found
+`geo`). All 40 per-episode logs (every node, proposed action, verifier verdict, oracle/severity
+outcome, undo) are in [`results/e1/trajectories/`](results/e1/trajectories/).
+
+Data: `results/e1/e1_summary.json`. A **partial** crack of the hard cascade (~40%), not a
+solution, with the safety coupling left as the next experiment.
