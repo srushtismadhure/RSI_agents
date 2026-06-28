@@ -1,0 +1,137 @@
+########## MODEL: claude-haiku-4-5 ##########
+🆕 A new version of hud-python is available: 0.6.7 (current: 0.6.6)
+   Run: uv sync --upgrade-package hud-python to update
+Initializing evaluation...
+         Evaluation Settings          
+╭────────────────┬───────────────────╮
+│ Setting        │ Value             │
+├────────────────┼───────────────────┤
+│ source         │ hud_env_static.py │
+│ runtime        │ local             │
+│ agent          │ claude            │
+│ task_ids       │ 0, 9, 19, 27, 30  │
+│ all            │ False             │
+│ max_steps      │ 10                │
+│ max_concurrent │ 30                │
+│ group_size     │ 3                 │
+│                │                   │
+│ claude config  │                   │
+│   model        │ claude-haiku-4-5  │
+╰────────────────┴───────────────────╯
+Loading tasks from: hud_env_static.py
+Filtered to 5 task(s)
+Loaded 5 task(s)
+Running evaluation (max_concurrent: 30, group_size: 3)
+https://hud.ai/jobs/e6857b0e0904433d925c68a6a106d72e
+
+'hud_env_static.py' Results
+  Runs: 15
+  Time: 20.2s (0.7/s)
+  Mean reward: 0.273 +/- 0.210
+  Success rate: 0.0%
+                                    Details                                     
+┏━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━┓
+┃    # ┃ Prompt                    ┃ Answer                   ┃   Reward ┃     ┃
+┡━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━┩
+│    0 │ You are the on-call SRE.  │ ROOT_CAUSE: The payments │    0.129 │  ○  │
+│      │ An alert..                │ service ..               │          │     │
+│    1 │ You are the on-call SRE.  │ ROOT_CAUSE: The payments │    0.129 │  ○  │
+│      │ An alert..                │ service ..               │          │     │
+│    2 │ You are the on-call SRE.  │ ROOT_CAUSE: The payments │    0.129 │  ○  │
+│      │ An alert..                │ service ..               │          │     │
+│    3 │ You are the on-call SRE.  │ ROOT_CAUSE: The upstream │    0.664 │  ○  │
+│      │ An alert..                │ dependen..               │          │     │
+│    4 │ You are the on-call SRE.  │ ROOT_CAUSE: The upstream │    0.664 │  ○  │
+│      │ An alert..                │ dependen..               │          │     │
+│    5 │ You are the on-call SRE.  │ ROOT_CAUSE: The upstream │    0.664 │  ○  │
+│      │ An alert..                │ dependen..               │          │     │
+│    6 │ You are the on-call SRE.  │ # SRE INCIDENT ANALYSIS  │    0.086 │  ○  │
+│      │ An alert..                │ **ROOT_C..               │          │     │
+│    7 │ You are the on-call SRE.  │ ROOT_CAUSE: A Consul     │    0.107 │  ○  │
+│      │ An alert..                │ agent percen..           │          │     │
+│    8 │ You are the on-call SRE.  │ ROOT_CAUSE: A Consul     │    0.086 │  ○  │
+│      │ An alert..                │ agent percen..           │          │     │
+│    9 │ You are the on-call SRE.  │ ROOT_CAUSE: The          │    0.313 │  ○  │
+│      │ An alert..                │ static_zone prelo..      │          │     │
+│   10 │ You are the on-call SRE.  │ ROOT_CAUSE: The          │    0.245 │  ○  │
+│      │ An alert..                │ static-zone-prelo..      │          │     │
+│   11 │ You are the on-call SRE.  │ ROOT_CAUSE: The          │    0.367 │  ○  │
+│      │ An alert..                │ static_zone prelo..      │          │     │
+│   12 │ You are the on-call SRE.  │ ROOT_CAUSE: A race       │    0.162 │  ○  │
+│      │ An alert..                │ condition in t..         │          │     │
+│   13 │ You are the on-call SRE.  │ ROOT_CAUSE: A race       │    0.162 │  ○  │
+│      │ An alert..                │ condition in t..         │          │     │
+│   14 │ You are the on-call SRE.  │ ROOT_CAUSE: A race       │    0.185 │  ○  │
+│      │ An alert..                │ condition in t..         │          │     │
+└──────┴───────────────────────────┴──────────────────────────┴──────────┴─────┘
+
+
+########## MODEL: claude-opus-4-8 ##########
+🆕 A new version of hud-python is available: 0.6.7 (current: 0.6.6)
+   Run: uv sync --upgrade-package hud-python to update
+Initializing evaluation...
+         Evaluation Settings          
+╭────────────────┬───────────────────╮
+│ Setting        │ Value             │
+├────────────────┼───────────────────┤
+│ source         │ hud_env_static.py │
+│ runtime        │ local             │
+│ agent          │ claude            │
+│ task_ids       │ 0, 9, 19, 27, 30  │
+│ all            │ False             │
+│ max_steps      │ 10                │
+│ max_concurrent │ 30                │
+│ group_size     │ 3                 │
+│                │                   │
+│ claude config  │                   │
+│   model        │ claude-opus-4-8   │
+╰────────────────┴───────────────────╯
+Loading tasks from: hud_env_static.py
+Filtered to 5 task(s)
+Loaded 5 task(s)
+Running evaluation (max_concurrent: 30, group_size: 3)
+https://hud.ai/jobs/44e342dd32314a28946bad536f15a1cb
+
+'hud_env_static.py' Results
+  Runs: 15
+  Time: 20.0s (0.7/s)
+  Mean reward: 0.499 +/- 0.173
+  Success rate: 6.7%
+                                    Details                                     
+┏━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━┓
+┃    # ┃ Prompt                    ┃ Answer                   ┃   Reward ┃     ┃
+┡━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━┩
+│    0 │ You are the on-call SRE.  │ ROOT_CAUSE: The payments │    0.579 │  ○  │
+│      │ An alert..                │ containe..               │          │     │
+│    1 │ You are the on-call SRE.  │ ROOT_CAUSE: The payments │    0.579 │  ○  │
+│      │ An alert..                │ containe..               │          │     │
+│    2 │ You are the on-call SRE.  │ ROOT_CAUSE: The payments │    0.579 │  ○  │
+│      │ An alert..                │ containe..               │          │     │
+│    3 │ You are the on-call SRE.  │ ROOT_CAUSE: The          │    0.634 │  ○  │
+│      │ An alert..                │ recommendations-u..      │          │     │
+│    4 │ You are the on-call SRE.  │ ROOT_CAUSE: The          │    0.634 │  ○  │
+│      │ An alert..                │ recommendations-u..      │          │     │
+│    5 │ You are the on-call SRE.  │ ROOT_CAUSE: The          │    0.634 │  ○  │
+│      │ An alert..                │ recommendations-u..      │          │     │
+│    6 │ You are the on-call SRE.  │ ROOT_CAUSE: A            │    0.621 │  ○  │
+│      │ An alert..                │ percentage-based ro..    │          │     │
+│    7 │ You are the on-call SRE.  │ ROOT_CAUSE: A            │    0.600 │  ○  │
+│      │ An alert..                │ percentage-based ro..    │          │     │
+│    8 │ You are the on-call SRE.  │ ROOT_CAUSE: The          │    0.579 │  ○  │
+│      │ An alert..                │ consul-agent perc..      │          │     │
+│    9 │ You are the on-call SRE.  │ ROOT_CAUSE: The          │    0.340 │  ○  │
+│      │ An alert..                │ static-zone-prelo..      │          │     │
+│   10 │ You are the on-call SRE.  │ ROOT_CAUSE: The          │    0.723 │  ✓  │
+│      │ An alert..                │ `static-zone-prel..      │          │     │
+│   11 │ You are the on-call SRE.  │ ROOT_CAUSE: The          │    0.340 │  ○  │
+│      │ An alert..                │ `static-zone-prel..      │          │     │
+│   12 │ You are the on-call SRE.  │ ROOT_CAUSE: A DNS        │    0.185 │  ○  │
+│      │ An alert..                │ Enactor race co..        │          │     │
+│   13 │ You are the on-call SRE.  │ ROOT_CAUSE: A DNS        │    0.231 │  ○  │
+│      │ An alert..                │ Enactor race in..        │          │     │
+│   14 │ You are the on-call SRE.  │ ROOT_CAUSE: A DNS        │    0.231 │  ○  │
+│      │ An alert..                │ Enactor race fo..        │          │     │
+└──────┴───────────────────────────┴──────────────────────────┴──────────┴─────┘
+
+
+ALL DONE

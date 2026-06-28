@@ -1,0 +1,12 @@
+{
+  "model": "claude-haiku-4-5",
+  "seeds": 3,
+  "incidents": 5,
+  "aggregate": {
+    "zero_shot": 0.242,
+    "best_of_n": 0.235,
+    "retry_realistic": 0.23,
+    "rex": 0.687,
+    "rex_no_oracle": 0.25
+  }
+}

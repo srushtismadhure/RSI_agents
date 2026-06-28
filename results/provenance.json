@@ -1,0 +1,81 @@
+{
+  "note": "Auto-Harness SRE eval. Every panel value traces to a results/ file. SUSPECT/NEEDS-DATA flagged honestly. No fabrication.",
+  "panels": [
+    {
+      "panel": 1,
+      "name": "env_quality",
+      "file": "results/env_quality.json (from hud_eval_showcase.log)",
+      "values": {
+        "haiku": 0.273,
+        "opus": 0.499
+      },
+      "class": "REPLOT-real",
+      "note": "HUD one-shot diagnosis mean reward, 34 tasks"
+    },
+    {
+      "panel": 2,
+      "name": "frontier_sweep",
+      "file": "results/frontier.json",
+      "values": "baseline/rex per model",
+      "class": "SUSPECT",
+      "note": "rex_mean=0.86 identical across all 5 models; opus baseline 0.81 contradicts Panel 1 (0.499). Likely placeholder; live re-run needed (no live frontier providers: Anthropic out of credits, no OpenAI/Google keys)."
+    },
+    {
+      "panel": 3,
+      "name": "curriculum_hard",
+      "file": "results/curriculum.json",
+      "values": "baseline_mean/rex_mean per model (hard cascades)",
+      "class": "REPLOT-committed",
+      "note": "committed; same provider caveat as Panel 2"
+    },
+    {
+      "panel": 4,
+      "name": "ablation",
+      "file": "results/ablation_haiku.json (from ablation.log) + results/ablation_glm.json",
+      "values": {
+        "haiku": {
+          "zero_shot": 0.242,
+          "rex": 0.687,
+          "rex_no_oracle": 0.25
+        },
+        "glm": {
+          "zero_shot": 0.277,
+          "rex": 0.6,
+          "rex_no_oracle": 0.54
+        }
+      },
+      "class": "REPLOT-real",
+      "note": "HONEST CONTROL: haiku rex collapses to ~zero_shot without oracle; glm partial. Oracle-dependence is real and model-dependent."
+    },
+    {
+      "panel": 5,
+      "name": "synth_verifier",
+      "file": "results/harness_synth_v1.json + v2",
+      "values": {
+        "seed": 0.667,
+        "synth_v1": 0.872,
+        "synth_v2": 0.897,
+        "hand_written": 0.949
+      },
+      "class": "REPLOT-real",
+      "note": "held-out ACCURACY; but safety metric false-allow: synth 0.385 vs hand 0.154 \u2014 verifier underperforms on the metric that matters."
+    },
+    {
+      "panel": 6,
+      "name": "rex_lift_delta",
+      "file": "derived from results/frontier.json per_scenario",
+      "values": "\u0394 per model, paired over 5 incidents, t-CI",
+      "class": "DERIVED (source SUSPECT)",
+      "note": "ALL models CI includes 0 -> within noise at n=5. Inherits Panel 2 caveat."
+    }
+  ],
+  "providers_live_at_run": {
+    "anthropic": "key set but OUT OF CREDITS",
+    "fireworks": "live (glm)",
+    "digitalocean_inference": "live (llama3.3-70b; gpt-5.5 403)",
+    "openai": "no key",
+    "google": "no key",
+    "deepseek": "via DO/fireworks only"
+  },
+  "integrity": "No LLM training/fine-tuning/GRPO. Base policy fixed; only the verifier is REx-synthesized. Numbers are committed results; frontier panels need a live re-run (flagged)."
+}

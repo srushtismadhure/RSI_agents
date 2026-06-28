@@ -1,0 +1,334 @@
+{
+  "budget": 3,
+  "simple": {
+    "claude-haiku-4-5": {
+      "cells": {
+        "oom_kill:image-resizer": {
+          "baseline": 0.4,
+          "rex": 1.0,
+          "outcome": "resolved"
+        },
+        "oom_kill:pdf-renderer": {
+          "baseline": 0.4,
+          "rex": 1.0,
+          "outcome": "resolved"
+        },
+        "oom_kill:thumbnail-svc": {
+          "baseline": 0.4,
+          "rex": 1.0,
+          "outcome": "resolved"
+        },
+        "oom_kill:video-encoder": {
+          "baseline": 0.4,
+          "rex": 1.0,
+          "outcome": "resolved"
+        },
+        "oom_kill:ml-embedder": {
+          "baseline": 0.4,
+          "rex": 1.0,
+          "outcome": "resolved"
+        },
+        "cpu_saturation_leaf:thumbnailer": {
+          "baseline": 1.0,
+          "rex": 1.0,
+          "outcome": "resolved"
+        },
+        "cpu_saturation_leaf:json-parser": {
+          "baseline": 1.0,
+          "rex": 1.0,
+          "outcome": "resolved"
+        },
+        "cpu_saturation_leaf:search-ranker": {
+          "baseline": 0.4,
+          "rex": 1.0,
+          "outcome": "resolved"
+        },
+        "cpu_saturation_leaf:report-builder": {
+          "baseline": 0.4,
+          "rex": 1.0,
+          "outcome": "resolved"
+        },
+        "cpu_saturation_leaf:geo-indexer": {
+          "baseline": 0.4,
+          "rex": 1.0,
+          "outcome": "resolved"
+        },
+        "bad_deploy_leaf:checkout-api": {
+          "baseline": 1.0,
+          "rex": 1.0,
+          "outcome": "resolved"
+        },
+        "bad_deploy_leaf:auth-api": {
+          "baseline": 1.0,
+          "rex": 1.0,
+          "outcome": "resolved"
+        },
+        "bad_deploy_leaf:pricing-svc": {
+          "baseline": 1.0,
+          "rex": 1.0,
+          "outcome": "resolved"
+        },
+        "bad_deploy_leaf:cart-api": {
+          "baseline": 1.0,
+          "rex": 1.0,
+          "outcome": "resolved"
+        },
+        "bad_deploy_leaf:notify-api": {
+          "baseline": 1.0,
+          "rex": 1.0,
+          "outcome": "resolved"
+        }
+      },
+      "baseline_mean": 0.68,
+      "rex_mean": 1.0
+    },
+    "claude-opus-4-8": {
+      "cells": {
+        "oom_kill:image-resizer": {
+          "baseline": 1.0,
+          "rex": 1.0,
+          "outcome": "resolved"
+        },
+        "oom_kill:pdf-renderer": {
+          "baseline": 1.0,
+          "rex": 1.0,
+          "outcome": "resolved"
+        },
+        "oom_kill:thumbnail-svc": {
+          "baseline": 1.0,
+          "rex": 1.0,
+          "outcome": "resolved"
+        },
+        "oom_kill:video-encoder": {
+          "baseline": 1.0,
+          "rex": 1.0,
+          "outcome": "resolved"
+        },
+        "oom_kill:ml-embedder": {
+          "baseline": 1.0,
+          "rex": 1.0,
+          "outcome": "resolved"
+        },
+        "cpu_saturation_leaf:thumbnailer": {
+          "baseline": 1.0,
+          "rex": 1.0,
+          "outcome": "resolved"
+        },
+        "cpu_saturation_leaf:json-parser": {
+          "baseline": 1.0,
+          "rex": 1.0,
+          "outcome": "resolved"
+        },
+        "cpu_saturation_leaf:search-ranker": {
+          "baseline": 1.0,
+          "rex": 1.0,
+          "outcome": "resolved"
+        },
+        "cpu_saturation_leaf:report-builder": {
+          "baseline": 1.0,
+          "rex": 1.0,
+          "outcome": "resolved"
+        },
+        "cpu_saturation_leaf:geo-indexer": {
+          "baseline": 1.0,
+          "rex": 1.0,
+          "outcome": "resolved"
+        },
+        "bad_deploy_leaf:checkout-api": {
+          "baseline": 1.0,
+          "rex": 1.0,
+          "outcome": "resolved"
+        },
+        "bad_deploy_leaf:auth-api": {
+          "baseline": 1.0,
+          "rex": 1.0,
+          "outcome": "resolved"
+        },
+        "bad_deploy_leaf:pricing-svc": {
+          "baseline": 1.0,
+          "rex": 1.0,
+          "outcome": "resolved"
+        },
+        "bad_deploy_leaf:cart-api": {
+          "baseline": 1.0,
+          "rex": 1.0,
+          "outcome": "resolved"
+        },
+        "bad_deploy_leaf:notify-api": {
+          "baseline": 1.0,
+          "rex": 1.0,
+          "outcome": "resolved"
+        }
+      },
+      "baseline_mean": 1.0,
+      "rex_mean": 1.0
+    }
+  },
+  "hard": {
+    "claude-haiku-4-5": {
+      "cells": {
+        "aws_dynamodb_dns": {
+          "baseline": 0.7,
+          "rex": 1.0,
+          "outcome": "resolved"
+        },
+        "cloudflare_waf": {
+          "baseline": 0.25,
+          "rex": 0.55,
+          "outcome": "escalated"
+        },
+        "crowdstrike_bsod": {
+          "baseline": 0.0,
+          "rex": 0.425,
+          "outcome": "escalated"
+        },
+        "railway_gcp_suspension": {
+          "baseline": 0.0,
+          "rex": 1.0,
+          "outcome": "resolved"
+        },
+        "azure_ddos": {
+          "baseline": 0.125,
+          "rex": 0.4,
+          "outcome": "escalated"
+        }
+      },
+      "baseline_mean": 0.215,
+      "rex_mean": 0.675
+    },
+    "claude-opus-4-8": {
+      "cells": {
+        "aws_dynamodb_dns": {
+          "baseline": 0.7,
+          "rex": 1.0,
+          "outcome": "resolved"
+        },
+        "cloudflare_waf": {
+          "baseline": 0.25,
+          "rex": 0.55,
+          "outcome": "escalated"
+        },
+        "crowdstrike_bsod": {
+          "baseline": 0.0,
+          "rex": 0.3,
+          "outcome": "escalated"
+        },
+        "railway_gcp_suspension": {
+          "baseline": 1.0,
+          "rex": 1.0,
+          "outcome": "resolved"
+        },
+        "azure_ddos": {
+          "baseline": 0.125,
+          "rex": 0.55,
+          "outcome": "escalated"
+        }
+      },
+      "baseline_mean": 0.415,
+      "rex_mean": 0.68
+    },
+    "gpt-5.5": {
+      "cells": {
+        "aws_dynamodb_dns": {
+          "baseline": 0.0,
+          "rex": 1.0,
+          "outcome": "resolved"
+        },
+        "cloudflare_waf": {
+          "baseline": 0.25,
+          "rex": 0.55,
+          "outcome": "escalated"
+        },
+        "crowdstrike_bsod": {
+          "baseline": 0.0,
+          "rex": 0.3,
+          "outcome": "escalated"
+        },
+        "railway_gcp_suspension": {
+          "baseline": 0.7,
+          "rex": 1.0,
+          "outcome": "resolved"
+        },
+        "azure_ddos": {
+          "baseline": 0.0,
+          "rex": 0.55,
+          "outcome": "escalated"
+        }
+      },
+      "baseline_mean": 0.19,
+      "rex_mean": 0.68
+    },
+    "gemini-3.1-pro": {
+      "cells": {
+        "aws_dynamodb_dns": {
+          "baseline": 0.0,
+          "rex": 1.0,
+          "outcome": "resolved"
+        },
+        "cloudflare_waf": {
+          "baseline": 0.25,
+          "rex": 0.55,
+          "outcome": "escalated"
+        },
+        "crowdstrike_bsod": {
+          "baseline": 0.0,
+          "rex": 0.3,
+          "outcome": "escalated"
+        },
+        "railway_gcp_suspension": {
+          "baseline": 0.7,
+          "rex": 1.0,
+          "outcome": "resolved"
+        },
+        "azure_ddos": null
+      },
+      "baseline_mean": 0.237,
+      "rex_mean": 0.713
+    },
+    "deepseek-v4-pro": {
+      "cells": {
+        "aws_dynamodb_dns": {
+          "baseline": 0.0,
+          "rex": 1.0,
+          "outcome": "resolved"
+        },
+        "cloudflare_waf": {
+          "baseline": 0.0,
+          "rex": 0.55,
+          "outcome": "escalated"
+        },
+        "crowdstrike_bsod": {
+          "baseline": 0.0,
+          "rex": 0.0,
+          "outcome": "escalated"
+        },
+        "railway_gcp_suspension": {
+          "baseline": 0.7,
+          "rex": 1.0,
+          "outcome": "resolved"
+        },
+        "azure_ddos": {
+          "baseline": 0.25,
+          "rex": 0.4,
+          "outcome": "escalated"
+        }
+      },
+      "baseline_mean": 0.19,
+      "rex_mean": 0.59
+    }
+  },
+  "simple_models": [
+    "claude-haiku-4-5",
+    "claude-opus-4-8"
+  ],
+  "hard_models": [
+    "claude-haiku-4-5",
+    "claude-opus-4-8",
+    "gpt-5.5",
+    "gemini-3.1-pro",
+    "deepseek-v4-pro"
+  ],
+  "n_simple": 15,
+  "n_hard": 5,
+  "hud_job": "f8a1d60fc0d049a89f4f3b7f096a888e"
+}
