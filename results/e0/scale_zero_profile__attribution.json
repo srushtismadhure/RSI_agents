@@ -1,0 +1,209 @@
+{
+  "scenario": "scale_zero_profile",
+  "ns": "test-hotel-reservation",
+  "svc": "profile",
+  "model": "do-llama3.3-70b",
+  "oracle": "out-of-band external /hotels probe (independent of AIOpsLab grader)",
+  "summary": {
+    "n_per_arm": {
+      "no_agent": 8,
+      "with_agent": 15
+    },
+    "no_agent_recovery": {
+      "k": 0,
+      "n": 8,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.3244
+      ]
+    },
+    "with_agent_recovery": {
+      "k": 15,
+      "n": 15,
+      "rate": 1.0,
+      "ci95": [
+        0.7961,
+        1.0
+      ]
+    },
+    "attributed_delta": 1.0,
+    "attributed_delta_ci95": [
+      0.6168,
+      1.0
+    ],
+    "attributable": true,
+    "verdict": "ATTRIBUTABLE \u2014 agent recovery exceeds ambient beyond the CI",
+    "mean_severity": {
+      "no_agent": 1.0,
+      "with_agent": 0.0
+    }
+  },
+  "raw": {
+    "no_agent": [
+      {
+        "seed": 0,
+        "arm": "no_agent",
+        "resolved": false,
+        "severity_end": 1.0,
+        "notes": ""
+      },
+      {
+        "seed": 1,
+        "arm": "no_agent",
+        "resolved": false,
+        "severity_end": 1.0,
+        "notes": ""
+      },
+      {
+        "seed": 2,
+        "arm": "no_agent",
+        "resolved": false,
+        "severity_end": 1.0,
+        "notes": ""
+      },
+      {
+        "seed": 3,
+        "arm": "no_agent",
+        "resolved": false,
+        "severity_end": 1.0,
+        "notes": ""
+      },
+      {
+        "seed": 4,
+        "arm": "no_agent",
+        "resolved": false,
+        "severity_end": 1.0,
+        "notes": ""
+      },
+      {
+        "seed": 5,
+        "arm": "no_agent",
+        "resolved": false,
+        "severity_end": 1.0,
+        "notes": ""
+      },
+      {
+        "seed": 6,
+        "arm": "no_agent",
+        "resolved": false,
+        "severity_end": 1.0,
+        "notes": ""
+      },
+      {
+        "seed": 7,
+        "arm": "no_agent",
+        "resolved": false,
+        "severity_end": 1.0,
+        "notes": ""
+      }
+    ],
+    "with_agent": [
+      {
+        "seed": 0,
+        "arm": "with_agent",
+        "resolved": true,
+        "severity_end": 0.0,
+        "notes": ""
+      },
+      {
+        "seed": 1,
+        "arm": "with_agent",
+        "resolved": true,
+        "severity_end": 0.0,
+        "notes": ""
+      },
+      {
+        "seed": 2,
+        "arm": "with_agent",
+        "resolved": true,
+        "severity_end": 0.0,
+        "notes": ""
+      },
+      {
+        "seed": 3,
+        "arm": "with_agent",
+        "resolved": true,
+        "severity_end": 0.0,
+        "notes": ""
+      },
+      {
+        "seed": 4,
+        "arm": "with_agent",
+        "resolved": true,
+        "severity_end": 0.0,
+        "notes": ""
+      },
+      {
+        "seed": 5,
+        "arm": "with_agent",
+        "resolved": true,
+        "severity_end": 0.0,
+        "notes": ""
+      },
+      {
+        "seed": 6,
+        "arm": "with_agent",
+        "resolved": true,
+        "severity_end": 0.0,
+        "notes": ""
+      },
+      {
+        "seed": 7,
+        "arm": "with_agent",
+        "resolved": true,
+        "severity_end": 0.0,
+        "notes": ""
+      },
+      {
+        "seed": 8,
+        "arm": "with_agent",
+        "resolved": true,
+        "severity_end": 0.0,
+        "notes": ""
+      },
+      {
+        "seed": 9,
+        "arm": "with_agent",
+        "resolved": true,
+        "severity_end": 0.0,
+        "notes": ""
+      },
+      {
+        "seed": 10,
+        "arm": "with_agent",
+        "resolved": true,
+        "severity_end": 0.0,
+        "notes": ""
+      },
+      {
+        "seed": 11,
+        "arm": "with_agent",
+        "resolved": true,
+        "severity_end": 0.0,
+        "notes": ""
+      },
+      {
+        "seed": 12,
+        "arm": "with_agent",
+        "resolved": true,
+        "severity_end": 0.0,
+        "notes": ""
+      },
+      {
+        "seed": 13,
+        "arm": "with_agent",
+        "resolved": true,
+        "severity_end": 0.0,
+        "notes": ""
+      },
+      {
+        "seed": 14,
+        "arm": "with_agent",
+        "resolved": true,
+        "severity_end": 0.0,
+        "notes": ""
+      }
+    ]
+  }
+}

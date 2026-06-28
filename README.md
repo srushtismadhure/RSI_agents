@@ -94,3 +94,38 @@ python3 viz/make_figure.py   # reads results/*.json -> figures/*.png
 This is the **auto-harness evaluation summary**. It does **not** settle the separate E0
 attribution question (agent-caused vs ambient recovery), which is a live-infra experiment.
 Panels 4 & 6 are the eval-side echoes of E0's logic, not the same experiment.
+
+---
+
+# E0 — Attributed recovery on a LIVE cluster (separate experiment)
+
+A different, live-infrastructure experiment answering: **is recovery caused by the *agent*,
+or by Kubernetes self-healing / the fault elapsing?** Run on a real DigitalOcean Kubernetes
+(DOKS) cluster with HotelReservation; graded by an **out-of-band oracle** (external probe of
+the `/hotels` user journey) that is **independent of any in-cluster grader**. Counterfactual:
+N seeded **no-agent** (inject, settle, probe) vs **with-agent** (a DO `llama3.3-70b` agent
+issues real `kubectl`), with the **attributed delta = P(resolved|agent) − P(resolved|no-agent)**
+and Wilson/Newcombe CIs.
+
+![e0](figures/e0_attributed_recovery.png)
+
+| scenario | type | no-agent | with-agent | attributed Δ (CI) | verdict |
+|----------|------|----------|------------|-------------------|---------|
+| `scale_zero_geo` | structural, trivial fix | 0/8 | 15/15 | **+1.00 [0.62,1.00]** | ATTRIBUTABLE |
+| `scale_zero_profile` | structural, trivial fix | 0/8 | 15/15 | **+1.00 [0.62,1.00]** | ATTRIBUTABLE |
+| `bad_image_geo` | non-trivial (diagnose+fix) | 0/8 | **0/15** | **0.00 [−0.32,0.20]** | within noise (stop condition) |
+
+**Findings (honest, mixed):**
+1. The out-of-band oracle **attributes** recovery to the agent on the structural faults (Δ=+1.0,
+   CI excludes 0), cleanly separated from ambient recovery (no-agent = 0, persistent fault).
+2. On the **non-trivial** bad-image cascade the agent (llama-3.3-70b) **failed all 15 episodes**
+   — it chased the `search` symptom and never identified `geo` as the root cause — so there is
+   **no attributable signal** (Δ within noise). The method correctly reports this rather than
+   flattering a failing agent.
+3. **Scope limit:** `revoke_auth` faults are invisible to an external journey probe (the service
+   serves from an in-memory index → `/hotels` stays 200), so an out-of-band oracle can attribute
+   recovery only for the **externally-observable fault class** (structural/startup failures).
+
+Data: `results/e0/*.json` (per-episode raw + summaries). This is a **positive control + an
+honest negative** — it demonstrates the attribution method works and where it bottoms out; it
+does **not** claim the agent is good at hard incidents (it isn't, here).

@@ -1,0 +1,209 @@
+{
+  "scenario": "bad_image_geo",
+  "ns": "test-hotel-reservation",
+  "svc": "geo",
+  "model": "do-llama3.3-70b",
+  "oracle": "out-of-band external /hotels probe (independent of AIOpsLab grader)",
+  "summary": {
+    "n_per_arm": {
+      "no_agent": 8,
+      "with_agent": 15
+    },
+    "no_agent_recovery": {
+      "k": 0,
+      "n": 8,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.3244
+      ]
+    },
+    "with_agent_recovery": {
+      "k": 0,
+      "n": 15,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.2039
+      ]
+    },
+    "attributed_delta": 0.0,
+    "attributed_delta_ci95": [
+      -0.3244,
+      0.2039
+    ],
+    "attributable": false,
+    "verdict": "INDISTINGUISHABLE from ambient recovery (delta CI includes 0) \u2014 this scenario cannot support an attributable reward [E0 STOP CONDITION]",
+    "mean_severity": {
+      "no_agent": 1.0,
+      "with_agent": 1.0
+    }
+  },
+  "raw": {
+    "no_agent": [
+      {
+        "seed": 0,
+        "arm": "no_agent",
+        "resolved": false,
+        "severity_end": 1.0,
+        "notes": ""
+      },
+      {
+        "seed": 1,
+        "arm": "no_agent",
+        "resolved": false,
+        "severity_end": 1.0,
+        "notes": ""
+      },
+      {
+        "seed": 2,
+        "arm": "no_agent",
+        "resolved": false,
+        "severity_end": 1.0,
+        "notes": ""
+      },
+      {
+        "seed": 3,
+        "arm": "no_agent",
+        "resolved": false,
+        "severity_end": 1.0,
+        "notes": ""
+      },
+      {
+        "seed": 4,
+        "arm": "no_agent",
+        "resolved": false,
+        "severity_end": 1.0,
+        "notes": ""
+      },
+      {
+        "seed": 5,
+        "arm": "no_agent",
+        "resolved": false,
+        "severity_end": 1.0,
+        "notes": ""
+      },
+      {
+        "seed": 6,
+        "arm": "no_agent",
+        "resolved": false,
+        "severity_end": 1.0,
+        "notes": ""
+      },
+      {
+        "seed": 7,
+        "arm": "no_agent",
+        "resolved": false,
+        "severity_end": 1.0,
+        "notes": ""
+      }
+    ],
+    "with_agent": [
+      {
+        "seed": 0,
+        "arm": "with_agent",
+        "resolved": false,
+        "severity_end": 1.0,
+        "notes": ""
+      },
+      {
+        "seed": 1,
+        "arm": "with_agent",
+        "resolved": false,
+        "severity_end": 1.0,
+        "notes": ""
+      },
+      {
+        "seed": 2,
+        "arm": "with_agent",
+        "resolved": false,
+        "severity_end": 1.0,
+        "notes": ""
+      },
+      {
+        "seed": 3,
+        "arm": "with_agent",
+        "resolved": false,
+        "severity_end": 1.0,
+        "notes": ""
+      },
+      {
+        "seed": 4,
+        "arm": "with_agent",
+        "resolved": false,
+        "severity_end": 1.0,
+        "notes": ""
+      },
+      {
+        "seed": 5,
+        "arm": "with_agent",
+        "resolved": false,
+        "severity_end": 1.0,
+        "notes": ""
+      },
+      {
+        "seed": 6,
+        "arm": "with_agent",
+        "resolved": false,
+        "severity_end": 1.0,
+        "notes": ""
+      },
+      {
+        "seed": 7,
+        "arm": "with_agent",
+        "resolved": false,
+        "severity_end": 1.0,
+        "notes": ""
+      },
+      {
+        "seed": 8,
+        "arm": "with_agent",
+        "resolved": false,
+        "severity_end": 1.0,
+        "notes": ""
+      },
+      {
+        "seed": 9,
+        "arm": "with_agent",
+        "resolved": false,
+        "severity_end": 1.0,
+        "notes": ""
+      },
+      {
+        "seed": 10,
+        "arm": "with_agent",
+        "resolved": false,
+        "severity_end": 1.0,
+        "notes": ""
+      },
+      {
+        "seed": 11,
+        "arm": "with_agent",
+        "resolved": false,
+        "severity_end": 1.0,
+        "notes": ""
+      },
+      {
+        "seed": 12,
+        "arm": "with_agent",
+        "resolved": false,
+        "severity_end": 1.0,
+        "notes": ""
+      },
+      {
+        "seed": 13,
+        "arm": "with_agent",
+        "resolved": false,
+        "severity_end": 1.0,
+        "notes": ""
+      },
+      {
+        "seed": 14,
+        "arm": "with_agent",
+        "resolved": false,
+        "severity_end": 1.0,
+        "notes": ""
+      }
+    ]
+  }
+}
