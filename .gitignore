@@ -1,0 +1,16 @@
+# MicroRemed client virtual environment
+backend/microremed_client/.venv/
+
+# Environment variables
+.env
+
+# Logs
+logs/
+*.log
+
+# Conversation / run artifacts
+conversations/
+
+# Python bytecode
+__pycache__/
+*.pyc
