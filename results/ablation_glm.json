@@ -1,0 +1,216 @@
+{
+  "model": "glm-5p2",
+  "N": 2,
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "temp": 0.7,
+  "incidents": [
+    "aws_dynamodb_dns",
+    "cloudflare_waf",
+    "crowdstrike_bsod",
+    "railway_gcp_suspension",
+    "azure_ddos"
+  ],
+  "per_incident": {
+    "zero_shot": {
+      "aws_dynamodb_dns": [
+        0.0,
+        0.0,
+        0.7
+      ],
+      "cloudflare_waf": [
+        0.55,
+        0.0,
+        0.0
+      ],
+      "crowdstrike_bsod": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "railway_gcp_suspension": [
+        0.3,
+        1.0,
+        1.0
+      ],
+      "azure_ddos": [
+        0.3,
+        0.0,
+        0.3
+      ]
+    },
+    "best_of_n": {
+      "aws_dynamodb_dns": [
+        0.7,
+        0.7,
+        0.3
+      ],
+      "cloudflare_waf": [
+        0.55,
+        0.55,
+        0.55
+      ],
+      "crowdstrike_bsod": [
+        0.0,
+        0.125,
+        0.0
+      ],
+      "railway_gcp_suspension": [
+        1.0,
+        1.0,
+        0.0
+      ],
+      "azure_ddos": [
+        0.0,
+        0.125,
+        0.55
+      ]
+    },
+    "retry_realistic": {
+      "aws_dynamodb_dns": [
+        0.3,
+        1.0,
+        0.7
+      ],
+      "cloudflare_waf": [
+        0.55,
+        0.55,
+        0.55
+      ],
+      "crowdstrike_bsod": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "railway_gcp_suspension": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "azure_ddos": [
+        0.09999999999999998,
+        0.3,
+        0.25
+      ]
+    },
+    "rex": {
+      "aws_dynamodb_dns": [
+        1.0,
+        1.0,
+        0.7
+      ],
+      "cloudflare_waf": [
+        0.55,
+        0.55,
+        0.55
+      ],
+      "crowdstrike_bsod": [
+        0.0,
+        0.0,
+        0.3
+      ],
+      "railway_gcp_suspension": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "azure_ddos": [
+        0.4,
+        0.55,
+        0.4
+      ]
+    },
+    "rex_no_oracle": {
+      "aws_dynamodb_dns": [
+        0.7,
+        1.0,
+        0.3
+      ],
+      "cloudflare_waf": [
+        0.55,
+        0.55,
+        0.55
+      ],
+      "crowdstrike_bsod": [
+        0.0,
+        0.3,
+        0.0
+      ],
+      "railway_gcp_suspension": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "azure_ddos": [
+        0.55,
+        0.3,
+        0.3
+      ]
+    }
+  },
+  "aggregate": {
+    "zero_shot": {
+      "mean": 0.277,
+      "std": 0.357
+    },
+    "best_of_n": {
+      "mean": 0.41,
+      "std": 0.345
+    },
+    "retry_realistic": {
+      "mean": 0.487,
+      "std": 0.374
+    },
+    "rex": {
+      "mean": 0.6,
+      "std": 0.338
+    },
+    "rex_no_oracle": {
+      "mean": 0.54,
+      "std": 0.335
+    }
+  },
+  "node_counts": {
+    "rex": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2
+    ],
+    "rex_no_oracle": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2
+    ]
+  },
+  "example_oracle_feedback": {
+    "incident": "aws_dynamodb_dns",
+    "feedback": "ROOT CAUSE: your diagnosis 'DynamoDB is unavailable or failing, causing all dependent services (control-services, ec2, nlb, app-frontend) to return 503 errors simultaneously through the shared dependency path.' is wrong (it matches a downstream symptom or a red herring). The real root cause is a DNS Planner/Enactor race published an empty DNS record for the regional DynamoDB endpoint, so DynamoDB became unresolvable and the AWS control services that depend on it were impaired \u2014 the EC2/NLB/app 5xx are DOWNSTREAM victims. Fix the DNS state first, then drain the control-plane backlog.. Look UPSTREAM of the loudest alerts.\nFIX: your plan included a correct fix (restart_service) targeting 'dynamodb'. Good.\nRESULT: the sim reports the incident RESOLVED \u2014 SLO restored and the root cleared."
+  }
+}

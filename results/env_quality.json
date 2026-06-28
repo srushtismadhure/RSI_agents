@@ -1,0 +1,8 @@
+{
+  "metric": "mean_reward_oneshot_diagnosis",
+  "n_tasks": 34,
+  "by_model": {
+    "claude-haiku-4-5": 0.273,
+    "claude-opus-4-8": 0.499
+  }
+}
